@@ -19,7 +19,7 @@ export function ThemeSwitch() {
   }
 
   if (!mounted) {
-    return null;
+    return <div className="h-full w-20" />;
   }
 
   const enabled =

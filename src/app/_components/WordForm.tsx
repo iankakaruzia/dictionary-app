@@ -2,6 +2,7 @@
 
 import classNames from "classnames";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 type WordFormProps = {
@@ -9,6 +10,7 @@ type WordFormProps = {
 };
 
 export function WordForm({ defaultWord }: WordFormProps) {
+  const router = useRouter();
   const [search, setSearch] = useState(defaultWord ?? "");
   const [hasError, setHasError] = useState(false);
 
@@ -26,6 +28,8 @@ export function WordForm({ defaultWord }: WordFormProps) {
     }
 
     setHasError(false);
+
+    void router.push(`?word=${search}`);
   }
 
   return (
