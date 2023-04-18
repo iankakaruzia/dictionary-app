@@ -15,8 +15,6 @@ export function Meaning({ meaning }: MeaningProps) {
     void router.push(`?word=${synonym}`);
   }
 
-  console.log({ meaning });
-
   return (
     <div className="mt-8">
       <div className="mb-8 flex items-center gap-5 md:mb-10">
