@@ -12,6 +12,17 @@ type PageProps = {
   };
 };
 
+export function generateMetadata({ searchParams: { word } }: PageProps) {
+  return {
+    ...(word
+      ? {
+          title: `${word} | Dictionary App`,
+          description: `Check out the definition of the word ${word}.`,
+        }
+      : {}),
+  };
+}
+
 const fetchWord = async (word?: string) => {
   if (!word) return;
 
