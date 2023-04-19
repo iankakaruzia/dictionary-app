@@ -12,6 +12,8 @@ type PageProps = {
   };
 };
 
+export const runtime = "experimental-edge";
+
 export function generateMetadata({ searchParams: { word } }: PageProps) {
   return {
     ...(word
