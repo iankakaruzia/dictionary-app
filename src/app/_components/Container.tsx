@@ -4,6 +4,7 @@ import { fontAtom } from "@/store";
 import { useAtom } from "jotai";
 import { Inconsolata, Inter, Lora } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { useEffect } from "react";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,6 +35,15 @@ export function Container({ children }: ContainerProps) {
     mono: "font-mono",
     serif: "font-serif",
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, []);
 
   return (
     <ThemeProvider attribute="class">
