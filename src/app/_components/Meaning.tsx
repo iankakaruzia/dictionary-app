@@ -48,7 +48,7 @@ export function Meaning({ meaning }: MeaningProps) {
             {meaning.synonyms.map((synonym) => (
               <button
                 className="font-bold text-purple-500 md:text-xl"
-                key={synonym}
+                key={nanoid()}
                 role="link"
                 onClick={() => navigateToSynonym(synonym)}
               >
