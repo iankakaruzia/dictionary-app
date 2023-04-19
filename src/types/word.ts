@@ -19,7 +19,7 @@ export type Meaning = {
 
 export type Word = {
   word: string;
-  phonetic: string;
+  phonetic?: string;
   phonetics: Phonetic[];
   origin: string;
   meanings: Meaning[];

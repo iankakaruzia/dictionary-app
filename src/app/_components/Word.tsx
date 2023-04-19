@@ -16,9 +16,11 @@ export function Word({ data, audioToPlay }: WordProps) {
       <section className="flex items-center justify-between">
         <div className="flex flex-col gap-2">
           <h1 className="text-3xl font-bold md:text-6xl">{data.word}</h1>
-          <span className="text-lg text-purple-500 md:text-2xl">
-            {data.phonetic}
-          </span>
+          {data.phonetic && (
+            <span className="text-lg text-purple-500 md:text-2xl">
+              {data.phonetic}
+            </span>
+          )}
         </div>
         {!!audioToPlay && <PlayButton audioToPlay={audioToPlay} />}
       </section>
